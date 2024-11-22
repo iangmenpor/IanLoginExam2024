@@ -1,3 +1,7 @@
 package edu.iesam.loginexam1eval.features.login.domain
 
-data class User(val id: String)
+data class User(
+    val id: String,
+    val username: String,
+    val password: String,
+    )

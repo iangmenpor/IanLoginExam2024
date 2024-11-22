@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcome_fragment">
+
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="edu.iesam.loginexam1eval.features.login.presentation.LoginFragment"
+        android:label="login screen"
+        tools:layout="@layout/fragment_login">
+    </fragment>
+
+    <fragment
+        android:id="@+id/welcome_fragment"
+        android:name="edu.iesam.loginexam1eval.features.login.presentation.WelcomeFragment"
+        android:label="welcome screen"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcome_fragment_to_login_fragment"
+            app:destination="@id/login_fragment"/>
+    </fragment>
+</navigation>
