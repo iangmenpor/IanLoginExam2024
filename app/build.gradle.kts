@@ -29,8 +29,14 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-}
+    buildFeatures {
+        viewBinding = true
+    }
 
+}
+ksp {
+    arg("KOIN_CONFIG_CHECK","true")
+}
 dependencies {
 
     //Librerías para la app
