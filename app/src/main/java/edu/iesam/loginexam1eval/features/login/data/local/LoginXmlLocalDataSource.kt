@@ -1,14 +1,16 @@
 package edu.iesam.loginexam1eval.features.login.data.local
 
 import android.content.Context
+import android.content.SharedPreferences
 import com.google.gson.Gson
 import edu.iesam.loginexam1eval.features.login.domain.User
 
-class LoginXmlLocalDataSource (private val context: Context) {
+class LoginXmlLocalDataSource (private val context: Context,
+    private val sharedPref: SharedPreferences) {
 
-    private val sharedPref = context.getSharedPreferences(
+    /*private val sharedPref = context.getSharedPreferences(
         "user-storage", Context.MODE_PRIVATE
-    )
+    )*/
 
     private val gson = Gson()
 
@@ -47,6 +49,6 @@ class LoginXmlLocalDataSource (private val context: Context) {
     }
 
     fun deleteById(movieId: String){
-        sharedPref.edit().remove(movieId).commit()
+        sharedPref.edit().remove(movieId).apply()
     }
 }
